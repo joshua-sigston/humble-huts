@@ -3,8 +3,6 @@ import React from 'react'
 // Router
 import { Outlet, NavLink } from 'react-router-dom'
 
-// Styles
-import styles from '../styles/header.module.css'
 
 const HostLayout = () => {
 

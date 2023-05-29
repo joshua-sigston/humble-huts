@@ -15,7 +15,7 @@ import HostHutDetails from './pages/host/HostHutDetails';
 // Components
 import Layout from './components/Layout';
 import HostLayout from './components/HostLayout';
-import HostHutDetailLayout from './components/HostHutDetailLayout';
+
 
 // Styles
 import styles from './styles/app-container.module.css'

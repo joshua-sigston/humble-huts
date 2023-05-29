@@ -1,7 +1,7 @@
 import React from 'react'
 
 // Router
-import { Outlet, NavLink } from 'react-router-dom'
+
 
 const HostHutDetailLayout = () => {
 
