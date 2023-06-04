@@ -1,9 +1,9 @@
-import { configureStore } from "@reduxjs/toolkit";
+// import { configureStore } from "@reduxjs/toolkit";
 
-import hutReducer from './hutSlice'
+// import hutReducer from './hutSlice'
 
-export const store = configureStore({
-    reducer: {
-        hutData: hutReducer
-    }
-})
+// export const store = configureStore({
+//     reducer: {
+//         hutData: hutReducer
+//     }
+// })

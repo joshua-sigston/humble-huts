@@ -1,0 +1,25 @@
+.home_container {
+    background-image: url('../images/pexels-michael-villanueva-13023628.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    min-height: 90vh;
+    display: grid;
+    place-content: center;
+    justify-items: center;
+    gap: 1em;
+    text-align: center;
+    color: #02111B;
+    padding-inline: .2em;
+}
+
+.home_link {
+    background-color: var(--clr-zomp);
+    color: var(--clr-white);
+    border-radius: .5rem;
+    max-width: 9rem;
+    padding: .3em .5em;
+
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}

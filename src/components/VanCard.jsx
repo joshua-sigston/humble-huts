@@ -4,13 +4,13 @@ import React from 'react'
 import styles from '../styles/hut-card.module.css'
 
 
-const HutCard = ({title, src, price, description, category, id}) => {
+const HutCard = ({imageUrl, name, type, price}) => {
 
   return (
     <div className={styles.card_container}>
-      <img src={src} alt="a hut" />
-      <h3>{title}</h3>
-      <p>{category}</p>
+      <img src={imageUrl} alt="a hut" />
+      <h3>{name}</h3>
+      <p>{type}</p>
       <p>{price}</p>
     </div>
   )

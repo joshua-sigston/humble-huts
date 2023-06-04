@@ -53,6 +53,7 @@ p, h1, h2, h3, h4, h5, h6 {
 :root {
     /* colors */
     --clr-rich-black: #02111B;
+    --clr-mid-grey: #677076;
     --clr-Mountbatten-pink: #93748A;
     --clr-airforce-blue: #568EA3;
     --clr-zomp: #66A182;
@@ -73,6 +74,14 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 /* general styles */
+
+h1, h2 {
+    font-family: var(--ff-title);
+}
+
+h3, h4, h5 {
+    font-family: var(--ff-sub-title);
+}
 
 .grid {
     width: 100%;
@@ -128,7 +137,6 @@ a {
 }
 
 .app_container {
-    padding: 1em;
     background-color: var(--clr-white);
     min-height: 100vh;
 }

@@ -1,0 +1,21 @@
+.list_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-items: center;
+    gap: 1em;
+}
+
+.active_link {
+    color: red;
+}
+
+.type_nav_container {
+    background-color: var(--clr-airforce-blue);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.type_link {
+    color: var(--clr-white);
+}

@@ -1,35 +1,33 @@
 import React from 'react'
 
-// Router
-
-
-const HostHutDetailLayout = () => {
+const HostVanDetailLayout = () => {
 
     const activeLink = {
         color: 'brown',
         fontWeight: 'bold'
       }
+      
   return (
+
     <div>
         <h1>HostHutLayout</h1>
-        <NavLink  to='/host/our-huts/:id/details'
+        <NavLink  to='/host/my-vans/:id/details'
                   end
                   style={({isActive}) => isActive ? activeLink : null}>
-        Details
+          Details
         </NavLink>
 
-        <NavLink  to='/host/our-huts/:id/pricing'
+        <NavLink  to='/host/my-vans/:id/pricing'
                   style={({isActive}) => isActive ? activeLink : null}>
-        Pricing
+          Pricing
         </NavLink>
 
-        <NavLink  to='/host/our-huts/:id/photos'
+        <NavLink  to='/host/my-vans/:id/photos'
                   style={({isActive}) => isActive ? activeLink : null}>
-        Photos
+          Photos
         </NavLink>
-      
     </div>
   )
 }
 
-export default HostHutDetailLayout
+export default HostVanDetailLayout
