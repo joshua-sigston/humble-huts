@@ -1,8 +1,10 @@
-.list_container {
+.list_container, .host_vans_list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     justify-items: center;
-    gap: 1em;
+    gap: 1.5em;
+    padding-top: 2em;
+    padding-bottom: 2em;
 }
 
 .active_link {
@@ -18,4 +20,23 @@
 
 .type_link {
     color: var(--clr-white);
+}
+
+.host_van {
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    max-width: 350px;
+    max-height: 200px;
+    border-radius: .3rem;
+    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.van_info {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    padding-inline: .5em;
 }

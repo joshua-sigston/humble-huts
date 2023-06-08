@@ -4,7 +4,7 @@ import React from 'react'
 import { useParams, Link, useLocation, useLoaderData } from 'react-router-dom'
 
 // Styles
-import styles from '../styles/hut-card.module.css'
+import styles from '../styles/van-card.module.css'
 
 // API
 import { getVans } from '../api'

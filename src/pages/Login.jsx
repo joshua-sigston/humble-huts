@@ -3,34 +3,61 @@ import React, { useState } from 'react'
 // Styles
 import styles from '../styles/login.module.css'
 
+// Router
+import { useLoaderData, Form, redirect, useNavigate } from 'react-router-dom'
+
+// API
+import { loginUser } from '../api'
+
+export function loginLoader({ request}) {
+  return new URL(request.url).searchParams.get('message');
+}
+
+export async function action({ request }) {
+  const formData = await request.formData()
+  const email = formData.get("email")
+  const password = formData.get("password")
+  const data = await loginUser({ email, password })
+  localStorage.setItem("loggedin", true)
+  
+  return redirect("about")
+}
+
 const Login = () => {
-    const [ loginFormData, setLoginFormData ] = useState({email: '', password: ''})
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const [ status, setStatus ] = useState('idle')
+    const [ error, setError ] = useState(null)
+    const navigate = useNavigate();
+    const data = useLoaderData();
 
-    }
-
-    const handleChange = (e) => {
-
-    }
   return (
     <div className={styles.login_container}>
+      {data && <h4>{data}</h4>}
+      {error && <h4>{error.message}</h4>}
         <h3>Sign In To Your Account</h3>
-        <form onSubmit={handleSubmit} className={styles.form_container}>
-            <input  type="email" 
-                    name='email' 
-                    placeholder='Email Address' 
-                    onChange={handleChange}
-                    value={loginFormData.email}
-                    className={styles.email_input}/>
-            <input  type="password" 
-                    name='password' 
-                    placeholder='Password' 
-                    onChange={handleChange}
-                    value={loginFormData.password}
-                    className={styles.password_input}/>
-        </form>
-      
+        <Form 
+                method="post" 
+                className="login-form" 
+                replace
+            >
+                <input
+                    name="email"
+                    type="email"
+                    placeholder="Email address"
+                />
+                <input
+                    name="password"
+                    type="password"
+                    placeholder="Password"
+                />
+                <button
+                    disabled={status === "submitting"}
+                >
+                    {status === "submitting"
+                        ? "Logging in..."
+                        : "Log in"
+                    }
+                </button>
+            </Form>
     </div>
   )
 }

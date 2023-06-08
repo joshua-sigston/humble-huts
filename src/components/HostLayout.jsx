@@ -1,16 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 // Router
-import { Outlet, NavLink } from 'react-router-dom'
+import { Outlet, NavLink, Navigate, useLoaderData } from 'react-router-dom'
 
 // Styles
 import styles from '../styles/header.module.css'
 
-const HostLayout = () => {
+export function loader() {
+  const isLoggedIn = localStorage.getItem('loggedIn')
+  return isLoggedIn
+}
 
+const HostLayout = () => {
+  const checkLoggedIn = useLoaderData()
+  console.log(checkLoggedIn)
   const activeLink = {
     color: '#568EA3'
   }
+
+  // if(checkLoggedIn || checkLoggedIn === null) {
+  //   return <Navigate to='/login?message=You must log in first' />
+  // }
+  console.log('host')
 
   return (
     <div>

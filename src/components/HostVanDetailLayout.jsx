@@ -1,12 +1,21 @@
 import React from 'react'
 
-const HostVanDetailLayout = () => {
+// Redux
+import { useSelector } from 'react-redux'
 
-    const activeLink = {
-        color: 'brown',
-        fontWeight: 'bold'
-      }
-      
+// Router
+import { Navigate } from 'react-router'
+
+const HostVanDetailLayout = () => {
+  const { loggedIn } = useSelector((store) => store.loggedIn)
+  
+  const activeLink = {
+    color: '#568EA3'
+  }
+
+  if(!loggedIn) {
+    return <Navigate to='/login' />
+  }
   return (
 
     <div>

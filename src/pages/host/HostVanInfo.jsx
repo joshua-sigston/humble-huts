@@ -4,7 +4,7 @@ import React from 'react'
 import { useOutletContext } from 'react-router'
 
 // Styles
-import styles from '../../styles/hut-card.module.css'
+
 import { current } from '@reduxjs/toolkit'
 
 const HostVanInfo = () => {
@@ -12,8 +12,7 @@ const HostVanInfo = () => {
   
   return (
     <section>
-      <div className={styles.details_container}>
-        <p>{currentVan.type}</p>
+      <div>
         <p>{currentVan.description}</p>
      </div>
     </section>

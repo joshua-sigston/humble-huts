@@ -1,8 +1,7 @@
 import React from 'react'
 
 // Styles
-import styles from '../styles/hut-card.module.css'
-
+import styles from '../styles/van-card.module.css'
 
 const HutCard = ({imageUrl, name, type, price}) => {
 
@@ -11,7 +10,7 @@ const HutCard = ({imageUrl, name, type, price}) => {
       <img src={imageUrl} alt="a hut" />
       <h3>{name}</h3>
       <p>{type}</p>
-      <p>{price}</p>
+      <p>${price}</p>
     </div>
   )
 }

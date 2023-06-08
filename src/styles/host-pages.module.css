@@ -1,0 +1,26 @@
+.host_van_details_container {
+    margin: .5em;
+    padding: .5em;
+    display: grid;
+    gap: 1em;
+    background-color: #aac3d331;
+}
+
+.top_row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.left_col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding-inline: .5em;
+}
+
+.host_van_details_container nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}

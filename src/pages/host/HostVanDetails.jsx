@@ -7,7 +7,7 @@ import { useParams, Link, Outlet, NavLink, useLoaderData } from 'react-router-do
 import { getHostVans } from '../../api'
 
 // Styles
-import styles from '../../styles/hut-card.module.css'
+import styles from '../../styles/host-pages.module.css'
 
 export function loader({ params }) {
   return getHostVans(params.id)
@@ -26,17 +26,17 @@ if (!currentVan) {
 }
 
   return (
-    <section>
+    <section className={styles.host_van_details_container}>
     <Link
           to=".."
           relative="path"
-          className="back-button"
+          className={styles.back_btn}
       >&larr; <span>Back to all vans</span></Link>
 
-      <div >
-        <div >
+      <div className={styles.host_van_details}>
+        <div className={styles.top_row}>
             <img src={currentVan.imageUrl} />
-            <div >
+            <div className={styles.left_col}>
                 <i>
                   {currentVan.type}
                 </i>

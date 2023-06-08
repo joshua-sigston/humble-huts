@@ -3,12 +3,18 @@
 // import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 // const APIKey = 'oBMRQylpLI6uL1Nzmh1190LXyFNXSnKmhoxo3PJhEkG6V400lABqnFVs';
 
+import { createSlice } from "@reduxjs/toolkit"
+
 // const initialState = {
 //     hutList: JSON.parse(localStorage.getItem('hutList')) || [],
 //     isLoading: true,
 //     isError: false,
 //     errorMessage: null,
 // }
+
+const initialState = {
+    loggedIn: false,
+}
 
 
 // export const getHuts = createAsyncThunk(
@@ -54,6 +60,11 @@
 //     }
 // )
 
+const userSlice = createSlice({
+    name: 'loggedIn',
+    initialState
+})
+
 // const hutSlice = createSlice({
 //     name: 'hutList',
 //     initialState,
@@ -87,3 +98,4 @@
 // })
 
 // export default hutSlice.reducer
+export default userSlice.reducer

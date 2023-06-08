@@ -3,14 +3,14 @@ import React from 'react'
 // Router
 import { Link, useLoaderData } from 'react-router-dom';
 
-// Components
-import VanCard from '../../components/VanCard';
-
 // API
 import { getHostVans } from '../../api';
 
-export function loader({ params }) {
-    return getHostVans(params.id)
+// Styles
+import styles from '../../styles/van-list.module.css'
+
+export function loader() {
+    return getHostVans()
 }
 
 const HostVanList = () => {
@@ -19,11 +19,10 @@ const HostVanList = () => {
   const hostVansEls = vans.map(van => (
     <Link
         to={van.id}
-        key={van.id}
-    >
-        <div className="host-van-single" key={van.id}>
+        key={van.id}>
+        <div className={styles.host_van} key={van.id}>
             <img src={van.imageUrl} alt={`Photo of ${van.name}`} />
-            <div className="host-van-info">
+            <div className={styles.van_info}>
                 <h3>{van.name}</h3>
                 <p>${van.price}/day</p>
             </div>
@@ -33,11 +32,10 @@ const HostVanList = () => {
 
 return (
     <section>
-        <h1 >Your listed vans</h1>
         <div>
             {
                 vans.length > 0 ? (
-                    <section>
+                    <section className={styles.host_vans_list}>
                         {hostVansEls}
                     </section>
 
